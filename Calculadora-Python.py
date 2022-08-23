@@ -6,8 +6,16 @@ def calculadora():
     if (operacao != 1) and (operacao != 2) and (operacao != 3) and (operacao != 4):
         print("Operação inválida!")
         return
-    num1 = int(input("\nDigite o 1º número: "))
-    num2 = int(input("\nDigite o 2º número: "))
+    try:
+        num1 = int(input("\nDigite o 1º número: "))
+    except ValueError:
+        print("\nNúmero inválido!")
+        return
+    try:
+        num2 = int(input("\nDigite o 2º número: "))
+    except ValueError:
+        print("\nNúmero inválido!")
+        return
     if operacao == 1:
         resultado = num1+num2
         print("\n", num1, "+", num2, "= ", resultado)
