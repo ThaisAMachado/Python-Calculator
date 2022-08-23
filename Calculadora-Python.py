@@ -1,11 +1,18 @@
 def calculadora():
     print("\n************* Calculadora Python *************")
     print("\nEscolha uma operação: ")
-    print("\n1. Adição \n2. Subtração \n3. Multiplicação \n4. Divisão \n")
-    operacao = int(input("Digite a operação desejada: "))
-    if (operacao != 1) and (operacao != 2) and (operacao != 3) and (operacao != 4):
-        print("Operação inválida!")
-        return
+    print("\n1. Adição \n2. Subtração \n3. Multiplicação \n4. Divisão")
+    while True:
+        try:
+            operacao = int(input("\nDigite a operação desejada: "))
+            if (operacao != 1) and (operacao != 2) and (operacao != 3) and (operacao != 4):
+                print("\nOperação inválida!")
+                continue
+        except:
+            print("\nSeleção inválida!")
+            continue
+        else:
+            break
     try:
         num1 = int(input("\nDigite o 1º número: "))
     except ValueError:
