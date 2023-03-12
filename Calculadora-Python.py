@@ -1,11 +1,18 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Mar 12 13:50:35 2023
+
+@author: Thais.Machado
+"""
+
 def calculadora():
     print("\n************* Calculadora Python *************")
     print("\nEscolha uma operação: ")
-    print("\n1. Adição \n2. Subtração \n3. Multiplicação \n4. Divisão")
+    print("\n1. Adição \n2. Subtração \n3. Multiplicação \n4. Divisão \n5. Potência")
     while True:
         try:
             operacao = int(input("\nDigite a operação desejada: "))
-            if (operacao != 1) and (operacao != 2) and (operacao != 3) and (operacao != 4):
+            if not operacao in (1,2,3,4,5):
                 print("\nOperação inválida!")
                 continue
         except:
@@ -32,8 +39,11 @@ def calculadora():
     elif operacao == 3:
         resultado = num1*num2
         print("\n", num1, "x", num2, "= ", resultado)
-    else:
+    elif operacao == 4:
         resultado = num1/num2
         print("\n", num1, "/", num2, "= ", resultado)
+    else:
+        resultado = num1**num2
+        print("\n", num1, "^", num2, "= ", resultado)
 
 calculadora()
